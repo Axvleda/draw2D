@@ -11,9 +11,9 @@ public class MyPanel extends JPanel implements ActionListener{
 
 
 
-    final int PANEL_WIDTH = 500;
+    final int PANEL_WIDTH = 1000;
 
-    final int PANEL_HEIGHT = 500;
+    final int PANEL_HEIGHT = 1000;
 
     Image enemy;
 
@@ -21,13 +21,17 @@ public class MyPanel extends JPanel implements ActionListener{
 
     Timer timer;
 
-    int xVelocity = 1;
+    int xVelocity = 2;
 
-    int yVelocity = 1;
+    int yVelocity = 3;
 
     int x = 0;
 
     int y = 0;
+
+    int enemy_width;
+
+    int enemy_height;
 
 
 
@@ -38,6 +42,7 @@ public class MyPanel extends JPanel implements ActionListener{
         this.setBackground(Color.black);
 
         enemy = new ImageIcon("penrose.png").getImage();
+
 
         backgroundImage = new ImageIcon("space.png").getImage();
 
@@ -63,8 +68,12 @@ public class MyPanel extends JPanel implements ActionListener{
 
         g2D.drawImage(backgroundImage, 0, 0,PANEL_WIDTH, PANEL_HEIGHT, null);
 
-        g2D.drawImage(enemy, x, y, null);
+        enemy_width = enemy.getWidth(null);
+        enemy_height = enemy.getHeight(null);
 
+        enemy_width = 50;
+        enemy_height = 50;
+        g2D.drawImage(enemy, x, y, enemy_width, enemy_height, null);
     }
 
 
@@ -74,9 +83,9 @@ public class MyPanel extends JPanel implements ActionListener{
 
 
 
-        if(x>=PANEL_WIDTH-enemy.getWidth(null) || x<0) {
+        if(x>=PANEL_WIDTH-enemy_width || x<0) {
 
-            xVelocity = xVelocity * -1;
+            xVelocity = (int) (xVelocity * -1);
 
         }
 
@@ -84,9 +93,9 @@ public class MyPanel extends JPanel implements ActionListener{
 
 
 
-        if(y>=PANEL_HEIGHT-enemy.getHeight(null) || y<0) {
+        if(y>=PANEL_HEIGHT-enemy_height || y<0) {
 
-            yVelocity = yVelocity * -1;
+            yVelocity = (int) (yVelocity * -1);
 
         }
 

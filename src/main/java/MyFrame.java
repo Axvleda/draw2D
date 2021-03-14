@@ -4,21 +4,16 @@ import java.awt.*;
 import javax.swing.*;
 
 
-
-public class MyFrame extends JFrame{
-
+public class MyFrame extends JFrame {
 
 
     MyPanel panel;
 
 
-
-    MyFrame(){
-
+    MyFrame() {
 
 
         panel = new MyPanel();
-
 
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,6 +23,8 @@ public class MyFrame extends JFrame{
         this.pack();
 
         this.setLocationRelativeTo(null);
+
+        this.setSize(1000,1000);
 
         this.setVisible(true);
 
