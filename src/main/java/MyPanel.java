@@ -66,6 +66,7 @@ public class MyPanel extends JPanel implements ActionListener{
 
 
         Graphics2D g2D = (Graphics2D) g;
+        g2D.setColor(Color.RED);
 
 
 
@@ -80,7 +81,7 @@ public class MyPanel extends JPanel implements ActionListener{
 
 
         //TEST
-        g2D.drawLine(500, 500, 500, 500);
+        g2D.drawLine(400, 499, 600, 501);
 
         g2D.drawString("AXVLEDA", 500,500);
     }
