@@ -2,6 +2,9 @@ import java.awt.*;
 
 
 import java.awt.event.*;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
 
 import javax.swing.*;
 
@@ -63,6 +66,7 @@ public class MyPanel extends JPanel implements ActionListener{
 
 
         Graphics2D g2D = (Graphics2D) g;
+        g2D.setColor(Color.RED);
 
 
 
@@ -74,6 +78,12 @@ public class MyPanel extends JPanel implements ActionListener{
         enemy_width = 50;
         enemy_height = 50;
         g2D.drawImage(enemy, x, y, enemy_width, enemy_height, null);
+
+
+        //TEST
+        g2D.drawLine(400, 499, 600, 501);
+
+        g2D.drawString("AXVLEDA", 500,500);
     }
 
 
@@ -82,24 +92,18 @@ public class MyPanel extends JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 
 
-
+        //Logo Movements
         if(x>=PANEL_WIDTH-enemy_width || x<0) {
-
             xVelocity = (int) (xVelocity * -1);
-
         }
-
         x = x + xVelocity;
 
-
-
         if(y>=PANEL_HEIGHT-enemy_height || y<0) {
-
             yVelocity = (int) (yVelocity * -1);
-
         }
-
         y = y + yVelocity;
+
+
 
         repaint();
 
