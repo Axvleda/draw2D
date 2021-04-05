@@ -14,7 +14,7 @@ public class TextSummerizer {
     public static void main(String[] args) throws UnirestException, ParseException, org.json.simple.parser.ParseException, UnsupportedEncodingException {
 
 
-        SummerizerRequest("https://de.wikipedia.org/wiki/Mozart", 25);
+        SummerizerRequest("https://en.wikipedia.org/wiki/Mozart", 10);
 
 
 //        HttpResponse<String> response = Unirest.post("https://textanalysis-text-summarization.p.rapidapi.com/text-summarizer-url")
