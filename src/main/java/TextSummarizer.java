@@ -4,14 +4,12 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import org.apache.commons.text.StringEscapeUtils;
 
 
-import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;
-import java.text.ParseException;
 
 
-public class TextSummerizer {
+public class TextSummarizer {
 
-    public static void main(String[] args) throws UnirestException, ParseException, org.json.simple.parser.ParseException, UnsupportedEncodingException {
+    public static void main(String[] args) throws UnirestException {
 
 
         SummerizerRequest("https://en.wikipedia.org/wiki/Mozart", 10);
@@ -30,9 +28,9 @@ public class TextSummerizer {
 
     }
 
-    public static void SummerizerRequest(String url, int numberOfsentences) throws UnirestException, UnsupportedEncodingException {
+    public static void SummerizerRequest(String url, int numberOfsentences) throws UnirestException {
 
-        String post_body = new String("url=" + url.replace(":", "%3A").replace("/", "%2F") + "&sentnum=" + numberOfsentences);
+        String post_body = ("url=" + url.replace(":", "%3A").replace("/", "%2F") + "&sentnum=" + numberOfsentences);
 
 //          TODO: UTF ENCODINGS
 
