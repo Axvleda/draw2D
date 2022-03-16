@@ -1,20 +1,16 @@
-import java.awt.*;
-
-
 import javax.swing.*;
 
 
 public class MyFrame extends JFrame {
 
 
-    MyPanel panel;
+    MyHappening panel;
 
 
     MyFrame() {
 
 
-        panel = new MyPanel();
-
+        panel = new MyHappening();
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
